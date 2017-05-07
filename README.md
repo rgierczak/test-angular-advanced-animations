@@ -17,7 +17,7 @@ $ npm run start
 Run the project in your browser
 
 ```
-localhost:4000
+localhost:4200
 ```
 
 ## Angular build-in states
