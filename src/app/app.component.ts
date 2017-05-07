@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
 
-import { showStateTrigger } from './animations';
+import { animateStateTrigger, showStateTrigger } from './animations';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
     animations: [
-        showStateTrigger
+        showStateTrigger,
+        animateStateTrigger
     ]
 })
 export class AppComponent {
-    isShown: false;
+    isShown = false;
+    animate = false;
+    width = 400;
 }

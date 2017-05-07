@@ -7,3 +7,19 @@
     *ngIf="isShown">
     You can see me now!
 </p>
+
+<button
+    (click)="width = width - 50">
+    Shrink
+</button>
+
+<button
+    (click)="animate = true">
+    Animate me
+</button>
+
+<p
+    [@animateState]="animate ? 'animated' : 'noAnimation'"
+    [ngStyle]="{ 'width.px': width }">
+    Shrink me
+</p>
