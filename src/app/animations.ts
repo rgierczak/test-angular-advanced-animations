@@ -1,4 +1,4 @@
-import { animate, group, style, transition, trigger } from '@angular/animations';
+import { animate, group, keyframes, style, transition, trigger } from '@angular/animations';
 
 export const showStateTrigger = trigger('showState', [
     // transition('void => *', [
@@ -24,7 +24,7 @@ export const showStateTrigger = trigger('showState', [
 
 export const animateStateTrigger = trigger('animateState', [
     transition('* => *', [
-        animate(400, style({
+        animate('2000ms cubic-bezier(.16,.78,.9,.30)', style({
             width: 0
         })),
         animate(400, style({
@@ -43,9 +43,20 @@ export const listStateTrigger = trigger('listState', [
             animate(1000, style({
                 opacity: 0.7
             })),
-            animate(2000, style({
-                backgroundColor: '#ff0000'
-            }))
+            animate('500ms ease-out', keyframes([
+                style({
+                    backgroundColor: '#ffffff',
+                    offset: 0
+                }),
+                style({
+                    backgroundColor: '#ff0000',
+                    offset: 0.8
+                }),
+                style({
+                    backgroundColor: '#00ff00',
+                    offset: 1
+                })
+            ]))
         ]),
         animate(300, style({
             backgroundColor: 'lightblue'
