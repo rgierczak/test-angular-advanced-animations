@@ -1,4 +1,9 @@
-<h1>
-    {{title}}
-</h1>
-<router-outlet></router-outlet>
+<button
+    (click)="isShown = !isShown">
+    Toggle element
+</button>
+<p
+    [@showState]="isShown ? 'shown' : 'notShown'"
+    *ngIf="isShown">
+    You can see me now!
+</p>
