@@ -1,16 +1,23 @@
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 export const showStateTrigger = trigger('showState', [
-    state('shown', style({
+    // transition('void => *', [
+    //     style({
+    //         opacity: 0
+    //     }),
+    //     animate(300)
+    // ]),
+    // transition('* => void', animate(300, style({
+    //     opacity: 0
+    // })))
 
-    })),
-    transition('void => shown', [
+    transition(':enter', [
         style({
             opacity: 0
         }),
         animate(300)
     ]),
-    transition('shown => void', animate(300, style({
+    transition(':leave', animate(300, style({
         opacity: 0
     })))
 ]);
