@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AnimationEvent } from '@angular/animations';
 
 import { animateStateTrigger, listStateTrigger, showStateTrigger } from './animations';
 
@@ -20,5 +21,13 @@ export class AppComponent {
 
     onAddElement() {
         this.testResults.push(Math.random());
+    }
+
+    onAnimationStarted(event: AnimationEvent) {
+        console.log('onAnimationStarted: ', event);
+    }
+
+    onAnimationDone(event: AnimationEvent) {
+        console.log('onAnimationDone: ', event);
     }
 }

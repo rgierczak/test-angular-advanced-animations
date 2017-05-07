@@ -28,6 +28,8 @@
 <div
     *ngFor="let testResult of testResults"
     @listState
+    (@listState.start)="onAnimationStarted($event)"
+    (@listState.done)="onAnimationDone($event)"
     class="test-result">
     {{ testResult }}
 </div>
